@@ -1,10 +1,10 @@
 import axios from 'axios';
 import { config } from '../../config/index.js';
 
-export const getAllUsers = async (ctx) => {
+export const getAllAttendings = async (ctx) => {
   if (config.authToken !== '' && config.authStatus) {
     await axios
-      .get(config.baseURL + '/users', {
+      .get(config.baseURL + '/attendings', {
         headers: {
           Authorization: 'Bearer ' + config.authToken,
         },

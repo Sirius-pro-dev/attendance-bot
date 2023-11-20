@@ -4,8 +4,8 @@ import { config } from '../../config/index.js';
 export const startHandler = async (ctx) => {
   await axios
     .post(config.baseURL + '/auth/login', {
-      email: 'admin',
-      password: 'admin',
+      email: 'valerian_floppa',
+      password: 'abc123',
     })
     .then((response) => {
       config.authToken = response.data.newAccessToken;

@@ -1,10 +1,11 @@
 import axios from 'axios';
+import { Scenes } from 'telegraf';
 import { config } from '../../config/index.js';
 
-export const getAllUsers = async (ctx) => {
+export const getAllMeetings = async (ctx) => {
   if (config.authToken !== '' && config.authStatus) {
     await axios
-      .get(config.baseURL + '/users', {
+      .get(config.baseURL + '/meetings', {
         headers: {
           Authorization: 'Bearer ' + config.authToken,
         },
