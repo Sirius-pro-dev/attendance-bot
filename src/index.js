@@ -16,12 +16,12 @@ bot.use(stage.middleware());
 
 bot.start(startHandler);
 
-for (const key in { ...scenes, ...commands }) {
-  if (Array.isArray(scenes) && scenes.includes(key)) {
-    bot.command(key.toLowerCase(), (ctx) => ctx.scene.enter(key));
-  } else if (Array.isArray(commands) && commands.includes(key)) {
-    bot.command(key.toLowerCase(), commands[key]);
-  }
+for (const command in commands) {
+  bot.command(command.toLowerCase(), commands[command]);
+}
+
+for (const myscene in scenes) {
+  bot.command(myscene.toLowerCase(), (ctx) => ctx.scene.enter(myscene));
 }
 
 bot.help((ctx) => ctx.reply('Its help))'));
