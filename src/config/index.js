@@ -1,5 +1,5 @@
 export const config = {
-  baseURL: 'http://localhost:3002',
+  baseURL: 'http://sirius.inno-js.ru:3002',
   authToken: '',
   authStatus: false,
   commandsList: [

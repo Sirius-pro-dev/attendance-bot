@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  attendance-bot:
+    env_file: .env
+    build: .
+    restart: always
+    ports:
+      - 4000:4000
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
