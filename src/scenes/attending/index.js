@@ -20,8 +20,8 @@ export const joinToAttending = new Scenes.WizardScene(
       .post(
         config.baseURL + '/attending',
         {
-          meetingID: ctx.wizard.state.meetingID,
-          studentID: ctx.wizard.state.studentID,
+          meetingId: ctx.wizard.state.meetingID,
+          studentId: ctx.wizard.state.studentID,
         },
         {
           headers: {
@@ -33,8 +33,10 @@ export const joinToAttending = new Scenes.WizardScene(
         ctx.reply('OK');
         ctx.scene.leave();
       })
-      .catch((error) => {
-        ctx.reply('Что-то пошло не так. Попробуйте еще раз.');
+      .catch((e) => {
+        ctx.replyWithMarkdownV2(
+          `\`\`\`json\n${JSON.stringify(e.response.data, null, 2)}\n\`\`\``
+        );
         ctx.scene.leave();
       });
   }

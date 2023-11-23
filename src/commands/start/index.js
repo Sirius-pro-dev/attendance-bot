@@ -13,6 +13,13 @@ export const startHandler = async (ctx) => {
       ctx.reply(
         `Доброго времени суток\n${ctx.from.first_name} вы успешно вошли в систему`
       );
+      ctx.reply(
+        `В случае если у нас не работает какая либо команда:\nВызовите команду /start `
+      );
     })
-    .catch((e) => console.log(e) && ctx.reply('что-то пошло не так'));
+    .catch((e) => {
+      ctx.replyWithMarkdownV2(
+        `\`\`\`json\n${JSON.stringify(e.response.data, null, 2)}\n\`\`\``
+      );
+    });
 };

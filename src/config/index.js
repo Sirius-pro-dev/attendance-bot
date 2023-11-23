@@ -31,5 +31,13 @@ export const config = {
       command: 'deleteUserById'.toLowerCase(),
       description: 'удалить пользователя по id',
     },
+    {
+      command: 'sendMessageByChatId'.toLowerCase(),
+      description: 'сообщение по id чата',
+    },
+    {
+      command: 'getChatId'.toLowerCase(),
+      description: 'получить совой id чата',
+    },
   ],
 };
