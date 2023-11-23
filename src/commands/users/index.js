@@ -14,9 +14,11 @@ export const getAllUsers = async (ctx) => {
           `\`\`\`json\n${JSON.stringify(res.data, null, 2)}\n\`\`\``
         );
       })
-      .catch(() => {
+      .catch((e) => {
         config.authStatus = false;
-        ctx.reply('back не отвечает');
+        ctx.replyWithMarkdownV2(
+          `\`\`\`json\n${JSON.stringify(e.response.data, null, 2)}\n\`\`\``
+        );
       });
   } else {
     ctx.reply('нужно еще раз запустить команду start');

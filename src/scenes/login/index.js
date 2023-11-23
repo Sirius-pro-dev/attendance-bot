@@ -29,7 +29,9 @@ export const login = new Scenes.WizardScene(
         return ctx.scene.leave();
       })
       .catch((e) => {
-        ctx.reply('что-то пошло не так');
+        ctx.replyWithMarkdownV2(
+          `\`\`\`json\n${JSON.stringify(e.response.data, null, 2)}\n\`\`\``
+        );
         return ctx.scene.leave();
       });
   }
