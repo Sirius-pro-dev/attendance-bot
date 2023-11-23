@@ -20,8 +20,8 @@ export const joinToAttending = new Scenes.WizardScene(
       .post(
         config.baseURL + '/attending',
         {
-          meetingID: ctx.wizard.state.meetingID,
-          studentID: ctx.wizard.state.studentID,
+          meetingId: ctx.wizard.state.meetingID,
+          studentId: ctx.wizard.state.studentID,
         },
         {
           headers: {
